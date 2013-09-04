@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="conversionApp">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -15,19 +15,18 @@
 
 <body>
 
-  <section role="region">
+  <section role="region" ng-controller="MetricConversionController">
     <header class="fixed">
       <h1>KM to Mile</h1>
     </header>
     <div class="content scrollable header">
       <form>
         <section>
-          <input id="km" type="number" min="0" placeholder="KM" required="">
-          <button type="submit">Convert</button>
+          <input autofocus="" autocomplete="off" ng-model="km" id="km" type="number" min="0" placeholder="KM" ng-change="kmToMile()" required="">
         </section>
         <section>
           <span class="label">MILE</span>
-          <div id="result">0.00</div>
+          <div id="result">{{mile | number:2}}</div>
         </section>
       </form>
     </div>
@@ -36,7 +35,9 @@
     </footer>
   </section>
 
-  <script src="js/Converter.js"></script>
+  <script src="js/vendor/angular.min.js"></script>
+  <script src="js/conversionApp.js"></script>
+  <script src="js/controllers/MetricConversionController.js"></script>
 
 </body>
 </html>
