@@ -4,9 +4,10 @@ input {
 }
 
 #result {
-	font-size: 6rem;
+	font-size: 10rem;
+	margin-top: -4rem;
 }
 
 section .label {
-	font-size: 4rem;
+	font-size: 5rem;
 }
