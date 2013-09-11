@@ -8,6 +8,10 @@ input {
 	margin-top: -4rem;
 }
 
+#drawer {
+	height: 1000px;
+}
+
 section .label {
 	font-size: 5rem;
 }
