@@ -3,7 +3,7 @@ input {
 	margin: 1rem auto;
 }
 
-#result {
+.result {
 	font-size: 10rem;
 	margin-top: -4rem;
 }

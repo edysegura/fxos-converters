@@ -14,7 +14,7 @@
   <title>Unit Converter</title>
 </head>
 
-<body>
+<body ng-controller="MetricConversionController">
 
   <section id="index" data-position="current">
     <section data-type="sidebar">
@@ -26,26 +26,39 @@
       </header>
       <nav>
         <ul>
-          <li><a href="#">KM to Mile</a></li>
-          <li><a href="#">Mile to KM</a></li>
+          <li><a href="#" ng-click="setKmToMile()">KM to Mile</a></li>
+          <li><a href="#" ng-click="setMileToKm()">Mile to KM</a></li>
         </ul>
       </nav>
     </section>
 
-    <section id="drawer" role="region" ng-controller="MetricConversionController">
+    <section id="drawer" role="region">
       <header class="fixed">
         <a href="#"><span class="icon icon-menu">hide sidebar</span></a>
         <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
         <h1>Unit Converter</h1>
       </header>
-      <article class="content scrollable header">
+      <!-- KM to Mile -->
+      <article ng-show="isKmToMile" class="content scrollable header">
         <form>
           <section>
-            <input autofocus="" autocomplete="off" ng-model="km" id="km" type="number" min="0" placeholder="KM" ng-change="kmToMile()" required="">
+            <input autofocus="" autocomplete="off" ng-model="km" id="km" type="number" min="0" placeholder="KM" ng-change="kmToMile()">
           </section>
           <section>
             <span class="label">MILE</span>
-            <div id="result">{{mile | number:2}}</div>
+            <div class="result">{{mile | number:2}}</div>
+          </section>
+        </form>
+      </article>
+      <!-- Mile to KM -->
+      <article ng-show="isMileToKm" class="content scrollable header">
+        <form>
+          <section>
+            <input autofocus="" autocomplete="off" ng-model="mile" id="mile" type="number" min="0" placeholder="Mile" ng-change="mileToKm()">
+          </section>
+          <section>
+            <span class="label">KM</span>
+            <div class="result">{{km | number:2}}</div>
           </section>
         </form>
       </article>
