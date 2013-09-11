@@ -1,6 +1,6 @@
 conversionApp.controller('MetricConversionController', function($scope) {
 	$scope.km = '';
-	$scope.mile = 0;
+	$scope.mile = '';
 	$scope.isKmToMile = true;
 	$scope.isMileToKm = false;
 
@@ -9,7 +9,7 @@ conversionApp.controller('MetricConversionController', function($scope) {
 			$scope.mile = $scope.km * 0.621371192;
 		}
 		else {
-			$scope.mile = 0;
+			$scope.mile = '';
 		}
 	};
 
@@ -18,7 +18,7 @@ conversionApp.controller('MetricConversionController', function($scope) {
 			$scope.km = $scope.mile * 1.621371192;
 		}
 		else {
-			$scope.mile = 0;
+			$scope.mile = '';
 		}
 	};
 
