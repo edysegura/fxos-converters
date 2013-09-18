@@ -1,19 +1,20 @@
 conversionApp.controller('MetricConversionController', function($scope) {
-	$scope.km = '';
-	$scope.mile = '';
-	$scope.celsius = '';
-	$scope.farenheit = '';
+	
 	$scope.isKmToMile = true;
-	$scope.isMileToKm = false;
-	$scope.isCelsiusToFarenheit = false;
-	$scope.isFarenheitToCelsius = false;
 
+	$scope.$on('$viewContentLoaded', function(){
+			$scope.setFieldVoid();
+			$scope.setValid();
+	});
+
+	
+//Logica de Conversão
 	$scope.kmToMile = function() {
 		if($scope.km) {
 			$scope.mile = $scope.km * 0.621371192;
 		}
 		else {
-			$scope.mile = 0;
+			$scope.mile = '';
 		}
 	};
 
@@ -22,71 +23,79 @@ conversionApp.controller('MetricConversionController', function($scope) {
 			$scope.km = $scope.mile * 1.621371192;
 		}
 		else {
-			$scope.km = 0;
+			$scope.mile = '';
 		}
 	};
 
-	$scope.celsiusToFarenheit = function() {
-		if($scope.celsius) {
-			$scope.farenheit = $scope.celsius * (9/5) + 32;
+	$scope.celciusToFare = function() {
+		if($scope.celcius) {
+			$scope.fare = $scope.celcius * 1.8 + 32;
 		}
 		else {
-			$scope.farenheit = 0;
+			$scope.celcius = '';
 		}
 	};
 
-	$scope.farenheitToCelsius = function() {
-		if($scope.farenheit) {
-			$scope.celsius = ($scope.farenheit - 32) * (5/9);
+	$scope.fareToCelcius = function() {
+		if($scope.fare) {
+			$scope.celcius = ($scope.fare - 32) * (5/9);
 		}
 		else {
-			$scope.celsius = 0;
+			$scope.celcius = '';
 		}
 	};
 
+	$scope.kelvinToCelcius = function() {
+		if($scope.kelvin) {
+			$scope.celcius = $scope.kelvin - 273;
+		}
+		else {
+			$scope.celcius = '';
+		}
+	};
+
+
+//Controle de tela
 	$scope.setKmToMile = function() {
-		$scope.isKmToMile = true;
-		$scope.isMileToKm = false;
-		$scope.isCelsiusToFarenheit = false;
-		$scope.isFarenheitToCelsius = false;
-		$scope.km = '';
-		$scope.mile = '';
-		$scope.celsius = '';
-		$scope.farenheit = '';
-
+		$scope.isKmToMile = $scope.setValid();
 	};
 
 	$scope.setMileToKm = function() {
-		$scope.isMileToKm = true;
-		$scope.isKmToMile = false;
-		$scope.isCelsiusToFarenheit = false;
-		$scope.isFarenheitToCelsius = false;
-		$scope.km = '';
-		$scope.mile = '';
-		$scope.celsius = '';
-		$scope.farenheit = '';
+		$scope.isMileToKm = $scope.setValid();
 	};
 
-	$scope.setCelsiusToFarenheit = function() {
-		$scope.isKmToMile = false;
-		$scope.isMileToKm = false;
-		$scope.isCelsiusToFarenheit = true;
-		$scope.isFarenheitToCelsius = false;
-		$scope.km = '';
-		$scope.mile = '';
-		$scope.celsius = '';
-		$scope.farenheit = '';
+	$scope.setCelciusToFare = function() {
+		$scope.isCelciusToFare = $scope.setValid();
+	};
+	$scope.setFareToCelcius = function() {
+		$scope.isFareToCelcius = $scope.setValid();
+	};
+	$scope.setKelvinToCelcius = function() {
+		$scope.isKelvinToCelcius = $scope.setValid();
 	};
 
-	$scope.setFarenheitToCelsius = function() {
-		$scope.isKmToMile = false;
-		$scope.isMileToKm = false;
-		$scope.isCelsiusToFarenheit = false;
-		$scope.isFarenheitToCelsius = true;
+
+ //Metodos auxiliares
+	$scope.setFieldVoid = function() {
 		$scope.km = '';
 		$scope.mile = '';
-		$scope.celsius = '';
-		$scope.farenheit = '';
+		$scope.celcius = '';
+		$scope.fare = '';
+		$scope.kelvin = '';
+		
+	};
+	$scope.setValid = function() {
+			$scope.setFieldVoid();
+
+			$scope.isMileToKm =  false;
+			$scope.isKmToMile =  false;
+			$scope.isCelciusToFare =  false;
+			$scope.isFareToCelcius =  false;
+			$scope.isKelvinToCelcius =  false;
+		
+		
+			return true;
 	};
 
+	
 });
