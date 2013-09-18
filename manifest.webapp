@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "name": "KM to Mile",
+  "name": "Unit Converter",
   "launch_path": "/index.html",
   "description": "App to convert KM to Mile",
   "icons": {
