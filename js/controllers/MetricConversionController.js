@@ -2,13 +2,12 @@ conversionApp.controller('MetricConversionController', function($scope) {
 	
 	$scope.isKmToMile = true;
 
-	$scope.$on('$viewContentLoaded', function(){
-			$scope.setFieldVoid();
-			$scope.setValid();
+	$scope.$on('$viewContentLoaded', function() {
+		$scope.setFieldVoid();
+		$scope.setValid();
 	});
 
 	
-//Logica de Conversão
 	$scope.kmToMile = function() {
 		if($scope.km) {
 			$scope.mile = $scope.km * 0.621371192;
@@ -55,7 +54,7 @@ conversionApp.controller('MetricConversionController', function($scope) {
 	};
 
 
-//Controle de tela
+	//Controle de tela
 	$scope.setKmToMile = function() {
 		$scope.isKmToMile = $scope.setValid();
 	};
@@ -75,27 +74,26 @@ conversionApp.controller('MetricConversionController', function($scope) {
 	};
 
 
- //Metodos auxiliares
+	//Metodos auxiliares
 	$scope.setFieldVoid = function() {
 		$scope.km = '';
 		$scope.mile = '';
 		$scope.celcius = '';
 		$scope.fare = '';
 		$scope.kelvin = '';
-		
+
 	};
+
 	$scope.setValid = function() {
-			$scope.setFieldVoid();
+		$scope.setFieldVoid();
 
-			$scope.isMileToKm =  false;
-			$scope.isKmToMile =  false;
-			$scope.isCelciusToFare =  false;
-			$scope.isFareToCelcius =  false;
-			$scope.isKelvinToCelcius =  false;
-		
-		
-			return true;
+		$scope.isMileToKm =  false;
+		$scope.isKmToMile =  false;
+		$scope.isCelciusToFare =  false;
+		$scope.isFareToCelcius =  false;
+		$scope.isKelvinToCelcius =  false;
+
+		return true;
 	};
 
-	
 });

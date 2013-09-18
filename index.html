@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="conversionApp">
-<head>
-  <!DOCTYPE html>
-<html ng-app="conversionApp">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -29,22 +27,36 @@
       </header>
       <nav>
         <ul>
-          <li><a href="#" ng-click="setKmToMile()">KM to Mile</a></li>
-          <li><a href="#" ng-click="setMileToKm()">Mile to KM</a></li>
-          <li><a href="#" ng-click="setCelciusToFare()">Celcius to Fanrenheit</a></li>
-          <li><a href="#" ng-click="setFareToCelcius()">Fanrenheit to Celcius</a></li>
-          <li><a href="#" ng-click="setKelvinToCelcius()">Kelvin to Celcius</a></li>
-
+          <li>
+            <a href="#" ng-click="setKmToMile()">KM to Mile</a>
+          </li>
+          <li>
+            <a href="#" ng-click="setMileToKm()">Mile to KM</a>
+          </li>
+          <li>
+            <a href="#" ng-click="setCelciusToFare()">Celcius to Fanrenheit</a>
+          </li>
+          <li>
+            <a href="#" ng-click="setFareToCelcius()">Fanrenheit to Celcius</a>
+          </li>
+          <li>
+            <a href="#" ng-click="setKelvinToCelcius()">Kelvin to Celcius</a>
+          </li>
         </ul>
       </nav>
     </section>
 
     <section id="drawer" role="region">
       <header class="fixed">
-        <a href="#"><span class="icon icon-menu">hide sidebar</span></a>
-        <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
+        <a href="#">
+          <span class="icon icon-menu">hide sidebar</span>
+        </a>
+        <a href="#drawer">
+          <span class="icon icon-menu">show sidebar</span>
+        </a>
         <h1>Unit Converter</h1>
       </header>
+
       <!-- KM to Mile -->
       <article ng-show="isKmToMile" class="content scrollable header">
         <form>
@@ -57,6 +69,7 @@
           </section>
         </form>
       </article>
+
       <!-- Mile to KM -->
       <article ng-show="isMileToKm" class="content scrollable header">
         <form>
@@ -69,10 +82,8 @@
           </section>
         </form>
       </article>
-    
 
-
-    <!-- cecius -->
+      <!-- Celsius to Farenheit -->
       <article ng-show="isCelciusToFare" class="content scrollable header">
         <form>
           <section>
@@ -85,7 +96,7 @@
         </form>
       </article>
 
-      <!-- fare -->
+      <!-- Farenheit to Celsius -->
       <article ng-show="isFareToCelcius" class="content scrollable header">
         <form>
           <section>
@@ -98,7 +109,7 @@
         </form>
       </article>
 
-       <!-- Kelvin for Celsius -->
+      <!-- Kelvin to Celsius -->
       <article ng-show="isKelvinToCelcius" class="content scrollable header">
         <form>
           <section>
@@ -112,11 +123,9 @@
       </article>
     </section>
 
+<script src="js/vendor/angular.min.js"></script>
+<script src="js/conversionApp.js"></script>
+<script src="js/controllers/MetricConversionController.js"></script>
 
-
-    <script src="js/vendor/angular.min.js"></script>
-    <script src="js/conversionApp.js"></script>
-    <script src="js/controllers/MetricConversionController.js"></script>
-
-  </body>
-  </html>
+</body>
+</html>
