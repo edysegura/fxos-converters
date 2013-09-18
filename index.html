@@ -28,6 +28,8 @@
         <ul>
           <li><a href="#" ng-click="setKmToMile()">KM to Mile</a></li>
           <li><a href="#" ng-click="setMileToKm()">Mile to KM</a></li>
+          <li><a href="#" ng-click="setCelsiusToFarenheit()">Celsius to Farenheit</a></li>
+          <li><a href="#" ng-click="setFarenheitToCelsius()">Farenheit to Celsius</a></li>
         </ul>
       </nav>
     </section>
@@ -59,6 +61,30 @@
           <section>
             <span class="label">KM</span>
             <div class="result">{{km | number:2}}</div>
+          </section>
+        </form>
+      </article>
+       <!-- Celsius to Farenheit -->
+      <article ng-show="isCelsiusToFarenheit" class="content scrollable header">
+        <form>
+          <section>
+            <input autofocus="" autocomplete="off" ng-model="celsius" id="celsius" type="number" min="0" placeholder="Celsius" ng-change="celsiusToFarenheit()">
+          </section>
+          <section>
+            <span class="label">Farenheit</span>
+            <div class="result">{{farenheit | number:2}}</div>
+          </section>
+        </form>
+      </article>
+      <!-- Mile to KM -->
+      <article ng-show="isFarenheitToCelsius" class="content scrollable header">
+        <form>
+          <section>
+            <input autofocus="" autocomplete="off" ng-model="farenheit" id="farenheit" type="number" min="0" placeholder="Farenheit" ng-change="farenheitToCelsius()">
+          </section>
+          <section>
+            <span class="label">Celsius</span>
+            <div class="result">{{celsius | number:2}}</div>
           </section>
         </form>
       </article>
