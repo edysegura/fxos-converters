@@ -52,6 +52,16 @@ conversionApp.controller('MetricConversionController', function($scope) {
 		}
 	};
 
+	$scope.celsiusToKelvin = function() {
+		if($scope.celsius) {
+			$scope.kelvin = $scope.celsius + 273;
+		}
+		else {
+			$scope.kelvin = '';
+		}
+	};
+
+
 	$scope.setKmToMile = function() {
 		$scope.isKmToMile = $scope.setCurrent();
 	};
@@ -72,6 +82,10 @@ conversionApp.controller('MetricConversionController', function($scope) {
 		$scope.isKelvinToCelsius = $scope.setCurrent();
 	};
 
+	$scope.setCelsiusToKelvin = function() {
+		$scope.isCelsiusToKelvin = $scope.setCurrent();
+	};
+
 	$scope.resetFields = function() {
 		$scope.km = '';
 		$scope.mile = '';
@@ -89,7 +103,7 @@ conversionApp.controller('MetricConversionController', function($scope) {
 		$scope.isCelsiusToFahrenheit =  false;
 		$scope.isFahrenheitToCelsius =  false;
 		$scope.isKelvinToCelsius =  false;
-
+		$scope.isCelsiusToKelvin =  false;
 		return true;
 	};
 
