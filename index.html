@@ -129,6 +129,19 @@
         </section>
       </form>
     </article>
+    <!-- Celsius to Kelvin -->
+    <article ng-show="isCelsiusToKelvin" class="content scrollable header">
+      <form>
+        <section>
+          <input autofocus="" autocomplete="off" ng-model="celsius" id="celsius" 
+           type="number" min="0" placeholder="Celsius" ng-change="CelsiusToKelvin()">
+        </section>
+        <section>
+          <span class="label">Kelvin</span>
+          <div class="result">{{kelvin | number:2}}</div>
+        </section>
+      </form>
+    </article>
   </section>
 </section>
 
