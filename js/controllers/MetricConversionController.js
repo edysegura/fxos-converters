@@ -43,6 +43,15 @@ conversionApp.controller('MetricConversionController', function($scope) {
 		}
 	};
 
+	$scope.fahrenheitToKelvin = function() {
+		if($scope.fahrenheit) {
+			$scope.kelvin = ($scope.fahrenheit - 32 / 1.8) + (273.15);
+		}
+		else {
+			$scope.kelvin = '';
+		}
+	};
+
 	$scope.kelvinToCelsius = function() {
 		if($scope.kelvin) {
 			$scope.celsius = $scope.kelvin - 273;
@@ -77,6 +86,10 @@ conversionApp.controller('MetricConversionController', function($scope) {
 		$scope.isFahrenheitToCelsius = $scope.setCurrent();
 	};
 
+	$scope.setFahrenheitToKelvin = function() {
+		$scope.isFahrenheitToKelvin = $scope.setCurrent();
+	};
+
 	$scope.setKelvinToCelsius = function() {
 		$scope.isKelvinToCelsius = $scope.setCurrent();
 	};
@@ -101,6 +114,7 @@ conversionApp.controller('MetricConversionController', function($scope) {
 		$scope.isKmToMile =  false;
 		$scope.isCelsiusToFahrenheit =  false;
 		$scope.isFahrenheitToCelsius =  false;
+		$scope.isFahrenheitToKelvin =  false;
 		$scope.isKelvinToCelsius =  false;
 		$scope.isCelsiusToKelvin =  false;
 

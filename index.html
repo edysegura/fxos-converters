@@ -39,6 +39,9 @@
         <li>
           <a href="#" ng-click="setFahrenheitToCelsius()">Fanrenheit to Celsius</a>
         </li>
+         <li>
+          <a href="#" ng-click="setFahrenheitToKelvin()">Fanrenheit to Kelvin</a>
+        </li>
         <li>
           <a href="#" ng-click="setKelvinToCelsius()">Kelvin to Celsius</a>
         </li>
@@ -112,6 +115,20 @@
         <section>
           <span class="label">Celsius</span>
           <div class="result">{{celsius | number:2}}</div>
+        </section>
+      </form>
+    </article>
+
+      <!-- Fahrenheitnheit to Kelvin -->
+    <article ng-show="isFahrenheitToKelvin" class="content scrollable header">
+      <form>
+        <section>
+          <input autofocus="" autocomplete="off" ng-model="fahrenheit" id="fahrenheit" 
+           type="number" min="0" placeholder="Fahrenheitheint" ng-change="fahrenheitToKelvin()">
+        </section>
+        <section>
+          <span class="label">Kelvin</span>
+          <div class="result">{{kelvin | number:2}}</div>
         </section>
       </form>
     </article>
