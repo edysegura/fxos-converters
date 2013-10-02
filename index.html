@@ -42,6 +42,15 @@
         <li>
           <a href="#" ng-click="setKelvinToCelsius()">Kelvin to Celsius</a>
         </li>
+          <li>
+          <a href="#" ng-click="setCelsiusToKelvin()">Celsius To Kelvin</a>
+        </li>
+        <li>
+          <a href="#" ng-click="setFahrenheitToKelvin()">Fahrenheit to Kelvin</a>
+        </li>
+        <li>
+          <a href="#" ng-click="setKelvinToFahrenheit()">Kelvin to Fanrenheit</a>
+        </li>
       </ul>
     </nav>
   </section>
@@ -113,7 +122,7 @@
       </form>
     </article>
 
-    <!-- Kelvin to Celsius -->
+        <!-- Kelvin to Celsius -->
     <article ng-show="isKelvinToCelsius" class="content scrollable header">
       <form>
         <section>
@@ -126,6 +135,49 @@
         </section>
       </form>
     </article>
+
+        <!-- Celsius to Kelvin -->
+    <article ng-show="isCelsiusToKelvin" class="content scrollable header">
+      <form>
+        <section>
+          <input autofocus="" autocomplete="off" ng-model="celsius" id="celsius" 
+           type="number" min="0" placeholder="Celsius" ng-change="celsiusToKelvin()">
+        </section>
+        <section>
+          <span class="label">Kelvin</span>
+          <div class="result">{{kelvin | number:2}}</div>
+        </section>
+      </form>
+    </article>
+
+    <!-- Fahrenheit to Kelvin -->
+    <article ng-show="isFahrenheitToKelvin" class="content scrollable header">
+      <form>
+        <section>
+          <input autofocus="" autocomplete="off" ng-model="fahrenheit" id="fahrenheit" 
+           type="number" min="0" placeholder="Fahrenheit" ng-change="fahrenheitToKelvin()">
+        </section>
+        <section>
+          <span class="label">Kelvin</span>
+          <div class="result">{{kelvin | number:2}}</div>
+        </section>
+      </form>
+    </article>
+
+    <!-- Kelvin to Fahrenheit -->
+    <article ng-show="isKelvinToFahrenheit" class="content scrollable header">
+      <form>
+        <section>
+          <input autofocus="" autocomplete="off" ng-model="kelvin" id="kelvin" 
+           type="number" min="0" placeholder="Kelvin" ng-change="kelvinToFahrenheit()">
+        </section>
+        <section>
+          <span class="label">Fanrenhet</span>
+          <div class="result">{{fahrenheit | number:2}}</div>
+        </section>
+      </form>
+    </article>
+
   </section>
 </section>
 
