@@ -6,7 +6,20 @@ describe("MetricConversionController", function() {
 		ctrl = $controller(MetricConversionController, {
 			$scope : scope
 		});
-	}))
+	}));
+
+	it('should invoke reset fields and set the current fields based on $viewContentLoaded event', function() {
+		//given
+		spyOn(scope, 'resetFields');
+		spyOn(scope, 'setCurrent');
+
+		//when
+		scope.$emit('$viewContentLoaded');
+
+		//then
+		expect(scope.resetFields).toHaveBeenCalled();
+		expect(scope.setCurrent).toHaveBeenCalled();
+	});
 
 	it('should convert 1 kilomiter to mile', function() {
 		//given
