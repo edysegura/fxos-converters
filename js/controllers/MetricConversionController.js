@@ -1,5 +1,4 @@
-conversionApp.controller('MetricConversionController', function($scope) {
-
+MetricConversionController = function($scope) {
 	//initialization	
 	$scope.isKmToMile = true;
 	$scope.$on('$viewContentLoaded', function() {
@@ -26,7 +25,7 @@ conversionApp.controller('MetricConversionController', function($scope) {
 	};
 
 	$scope.celsiusToFahrenheit = function() {
-		if($scope.celsius) {
+		if($scope.celsius != undefined) {
 			$scope.fahrenheit = $scope.celsius * 1.8 + 32;
 		}
 		else {
@@ -35,7 +34,7 @@ conversionApp.controller('MetricConversionController', function($scope) {
 	};
 
 	$scope.fahrenheitToCelsius = function() {
-		if($scope.fahrenheit) {
+		if($scope.fahrenheit != undefined) {
 			$scope.celsius = ($scope.fahrenheit - 32) * (5/9);
 		}
 		else {
@@ -44,7 +43,7 @@ conversionApp.controller('MetricConversionController', function($scope) {
 	};
 
 	$scope.fahrenheitToKelvin = function() {
-		if($scope.fahrenheit) {
+		if($scope.fahrenheit != undefined) {
 			$scope.kelvin = ($scope.fahrenheit - 32 / 1.8) + (273.15);
 		}
 		else {
@@ -53,7 +52,7 @@ conversionApp.controller('MetricConversionController', function($scope) {
 	};
 
 	$scope.kelvinToCelsius = function() {
-		if($scope.kelvin) {
+		if($scope.kelvin != undefined) {
 			$scope.celsius = $scope.kelvin - 273;
 		}
 		else {
@@ -62,7 +61,7 @@ conversionApp.controller('MetricConversionController', function($scope) {
 	};
 
 	$scope.celsiusToKelvin = function() {
-		if($scope.celsius) {
+		if($scope.celsius != undefined) {
 			$scope.kelvin = $scope.celsius + 273;
 		}
 		else {
@@ -120,5 +119,4 @@ conversionApp.controller('MetricConversionController', function($scope) {
 
 		return true;
 	};
-
-});
+};
