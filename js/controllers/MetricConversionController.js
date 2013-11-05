@@ -44,7 +44,7 @@ MetricConversionController = function($scope) {
 
 	$scope.fahrenheitToKelvin = function() {
 		if($scope.fahrenheit != undefined) {
-			$scope.kelvin = ($scope.fahrenheit - 32 / 1.8) + (273.15);
+			$scope.kelvin = ($scope.fahrenheit + 459.67) * (5/9);
 		}
 		else {
 			$scope.kelvin = '';
@@ -53,7 +53,7 @@ MetricConversionController = function($scope) {
 
 	$scope.kelvinToCelsius = function() {
 		if($scope.kelvin != undefined) {
-			$scope.celsius = $scope.kelvin - 273;
+			$scope.celsius = $scope.kelvin - 273.15;
 		}
 		else {
 			$scope.celsius = '';
@@ -62,7 +62,7 @@ MetricConversionController = function($scope) {
 
 	$scope.celsiusToKelvin = function() {
 		if($scope.celsius != undefined) {
-			$scope.kelvin = $scope.celsius + 273;
+			$scope.kelvin = $scope.celsius + 273.15;
 		}
 		else {
 			$scope.kelvin = '';
