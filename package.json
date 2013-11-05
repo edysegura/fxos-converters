@@ -1,8 +1,10 @@
 {
+	"name": "Fxos Converter",
+	"version": "0.1",
     "devDependencies": {
         "karma": "0.10.2"
     },
     "scripts": {
-        "test": "./node_modules/.bin/karmastart--browser Firefox--single-run"
+        "test": "./node_modules/.bin/karmastart --browser Firefox --single-run"
     }
 }
