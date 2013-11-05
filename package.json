@@ -9,6 +9,6 @@
 	},
 
 	"scripts": {
-		"test": "./node_modules/.bin/karma start --browser Firefox --single-run"
+		"test": "./node_modules/.bin/karma start tests/karma.conf.js --browser Firefox --single-run"
 	}
 }
