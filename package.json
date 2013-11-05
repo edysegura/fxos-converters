@@ -1,7 +1,4 @@
 {
-	"name": "Fxos-Converter",
-	"version": "0.1",
-	
 	"devDependencies": {
 		"karma": "0.10.2"
 	},
