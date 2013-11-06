@@ -17,7 +17,7 @@ module.exports = function(config) {
       '../js/vendor/angular.*.js',
       '../js/vendor/angular-*.js',
       '../js/**/*.js',
-      '*Spec.js'
+      'spec/*Spec.js'
     ],
 
 
