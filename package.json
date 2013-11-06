@@ -5,7 +5,7 @@
 
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/danielpsf/fxos-converters.git"
+		"url": "https://github.com/edysegura/fxos-converters.git"
 	},
 
 	"scripts": {
