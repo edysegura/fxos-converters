@@ -1,0 +1,14 @@
+{
+	"devDependencies": {
+		"karma": "0.10.2"
+	},
+
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/danielpsf/fxos-converters.git"
+	},
+
+	"scripts": {
+		"test": "./node_modules/.bin/karma start tests/karma.conf.js --browser Firefox --single-run"
+	}
+}
