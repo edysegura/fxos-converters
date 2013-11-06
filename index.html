@@ -15,7 +15,7 @@
 <title>Unit Converter</title>
 
 </head>
-<body ng-controller="MetricConversionController">
+<body ng-controller="ConversionController">
 
 <section id="index" data-position="current">
   <section data-type="sidebar">
@@ -52,6 +52,9 @@
         <li>
           <a href="#" ng-click="setKelvinToCelsius()">Kelvin to Celsius</a>
         </li>
+        <li>
+          <a href="#" ng-click="setKelvinToFahrenheit()">Kelvin to Fanrenheit</a>
+        </li>
       </ul>
     </nav>
   </section>
@@ -71,7 +74,7 @@
     <article ng-show="isKmToMile" class="content scrollable header">
       <form>
         <section>
-          <input autofocus="" autocomplete="off" ng-model="km" id="km" 
+          <input autofocus="" autocomplete="off" ng-model="km" 
            type="number" min="0" placeholder="KM" ng-change="kmToMile()">
         </section>
         <section>
@@ -85,7 +88,7 @@
     <article ng-show="isMileToKm" class="content scrollable header">
       <form>
         <section>
-          <input autofocus="" autocomplete="off" ng-model="mile" id="mile" 
+          <input autofocus="" autocomplete="off" ng-model="mile" 
            type="number" min="0" placeholder="Mile" ng-change="mileToKm()">
         </section>
         <section>
@@ -99,7 +102,7 @@
     <article ng-show="isCelsiusToFahrenheit" class="content scrollable header">
       <form>
         <section>
-          <input autofocus="" autocomplete="off" ng-model="celsius" id="celsius" 
+          <input autofocus="" autocomplete="off" ng-model="celsius" 
            type="number" placeholder="Celsius" ng-change="celsiusToFahrenheit()">
         </section>
         <section>
@@ -109,11 +112,25 @@
       </form>
     </article>
 
+    <!-- Celcius to Kelvin -->
+    <article ng-show="isCelsiusToKelvin" class="content scrollable header">
+      <form>
+        <section>
+          <input autofocus="" autocomplete="off" ng-model="celsius" 
+           type="number" placeholder="Celsius" ng-change="celsiusToKelvin()">
+        </section>
+        <section>
+          <span class="label">Kelvin</span>
+          <div class="result">{{kelvin | number:2}}</div>
+        </section>
+      </form>
+    </article>
+
     <!-- Fahrenheitnheit to Celsius -->
     <article ng-show="isFahrenheitToCelsius" class="content scrollable header">
       <form>
         <section>
-          <input autofocus="" autocomplete="off" ng-model="fahrenheit" id="fahrenheit" 
+          <input autofocus="" autocomplete="off" ng-model="fahrenheit" 
            type="number" placeholder="Fahrenheitheint" ng-change="fahrenheitToCelsius()">
         </section>
         <section>
@@ -123,11 +140,11 @@
       </form>
     </article>
 
-      <!-- Fahrenheitnheit to Kelvin -->
+    <!-- Fahrenheitnheit to Kelvin -->
     <article ng-show="isFahrenheitToKelvin" class="content scrollable header">
       <form>
         <section>
-          <input autofocus="" autocomplete="off" ng-model="fahrenheit" id="fahrenheit" 
+          <input autofocus="" autocomplete="off" ng-model="fahrenheit" 
            type="number" placeholder="Fahrenheitheint" ng-change="fahrenheitToKelvin()">
         </section>
         <section>
@@ -141,7 +158,7 @@
     <article ng-show="isKelvinToCelsius" class="content scrollable header">
       <form>
         <section>
-          <input autofocus="" autocomplete="off" ng-model="kelvin" id="kelvin" 
+          <input autofocus="" autocomplete="off" ng-model="kelvin" 
            type="number" placeholder="Kelvin" ng-change="kelvinToCelsius()">
         </section>
         <section>
@@ -151,26 +168,26 @@
       </form>
     </article>
 
-      <!-- Celcius to Kelvin -->
-    <article ng-show="isCelsiusToKelvin" class="content scrollable header">
+    <!-- Kelvin to Celsius -->
+    <article ng-show="isKelvinToFahrenheit" class="content scrollable header">
       <form>
         <section>
-          <input autofocus="" autocomplete="off" ng-model="celsius" id="celsius" 
-           type="number" placeholder="Celsius" ng-change="celsiusToKelvin()">
+          <input autofocus="" autocomplete="off" ng-model="kelvin" 
+           type="number" placeholder="Kelvin" ng-change="kelvinToFahrenheit()">
         </section>
         <section>
-          <span class="label">Kelvin</span>
-          <div class="result">{{kelvin | number:2}}</div>
+          <span class="label">Fahrenheit</span>
+          <div class="result">{{fahrenheit | number:2}}</div>
         </section>
       </form>
-    </article>
+    </article>    
 
   </section>
 </section>
 
 <script src="js/vendor/angular.min.js"></script>
 <script src="js/conversionApp.js"></script>
-<script src="js/controllers/MetricConversionController.js"></script>
+<script src="js/controllers/ConversionController.js"></script>
 
 </body>
 </html>

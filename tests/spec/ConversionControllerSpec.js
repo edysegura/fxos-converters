@@ -1,9 +1,9 @@
-describe("MetricConversionController", function() {
+describe("ConversionController", function() {
 	var ctrl, scope;
 
 	beforeEach(inject(function($rootScope, $controller) {
 		scope = $rootScope.$new();
-		ctrl = $controller(MetricConversionController, {
+		ctrl = $controller(ConversionController, {
 			$scope : scope
 		});
 	}));
@@ -79,7 +79,7 @@ describe("MetricConversionController", function() {
 			expect(scope.celsius).toBe(-17.22222222222222);
 		});
 
-		it('should convert 1 fahrenheit to -255.928 kelvin', function() {
+		it('should convert 1 fahrenheit to -255.9277777777778 kelvin', function() {
 			//given
 			scope.fahrenheit = 1;
 
@@ -101,19 +101,15 @@ describe("MetricConversionController", function() {
 			expect(scope.celsius).toBe(-272.15);
 		});
 
-		xit('should convert 1 kelvin to -457.87 fahrenheit', function() {
+		it('should convert 1 kelvin to -457.86999999999995 fahrenheit', function() {
 			//given
 			scope.kelvin = 1;
 
-			/*
-			Kelvin To Fahrenheit: 
-			((Kelvin - 273) * 1.8 ) + 32; note: 1.8 = 9/5
-			*/
 			//when
 			scope.kelvinToFahrenheit();
 
 			//then
-			expect(scope.fahrenheit).toBe(-457.87);
+			expect(scope.fahrenheit).toBe(-457.86999999999995);
 		});
 	});
 

@@ -1,4 +1,4 @@
-MetricConversionController = function($scope) {
+ConversionController = function($scope) {
 	//initialization	
 	$scope.isKmToMile = true;
 	$scope.$on('$viewContentLoaded', function() {
@@ -33,6 +33,15 @@ MetricConversionController = function($scope) {
 		}
 	};
 
+	$scope.celsiusToKelvin = function() {
+		if($scope.celsius != undefined) {
+			$scope.kelvin = $scope.celsius + 273.15;
+		}
+		else {
+			$scope.kelvin = '';
+		}
+	};
+
 	$scope.fahrenheitToCelsius = function() {
 		if($scope.fahrenheit != undefined) {
 			$scope.celsius = ($scope.fahrenheit - 32) * (5/9);
@@ -60,14 +69,14 @@ MetricConversionController = function($scope) {
 		}
 	};
 
-	$scope.celsiusToKelvin = function() {
-		if($scope.celsius != undefined) {
-			$scope.kelvin = $scope.celsius + 273.15;
+	$scope.kelvinToFahrenheit = function() {
+		if($scope.kelvin != undefined) {
+			$scope.fahrenheit = ((($scope.kelvin) - 273.15) * 1.8) + 32;
 		}
 		else {
-			$scope.kelvin = '';
+			$scope.fahrenheit = '';
 		}
-	};
+	};	
 
 	$scope.setKmToMile = function() {
 		$scope.isKmToMile = $scope.setCurrent();
@@ -79,6 +88,10 @@ MetricConversionController = function($scope) {
 
 	$scope.setCelsiusToFahrenheit = function() {
 		$scope.isCelsiusToFahrenheit = $scope.setCurrent();
+	};
+
+	$scope.setCelsiusToKelvin = function() {
+		$scope.isCelsiusToKelvin = $scope.setCurrent();
 	};
 
 	$scope.setFahrenheitToCelsius = function() {
@@ -93,8 +106,8 @@ MetricConversionController = function($scope) {
 		$scope.isKelvinToCelsius = $scope.setCurrent();
 	};
 
-	$scope.setCelsiusToKelvin = function() {
-		$scope.isCelsiusToKelvin = $scope.setCurrent();
+	$scope.setKelvinToFahrenheit = function() {
+		$scope.isKelvinToFahrenheit = $scope.setCurrent();
 	};
 
 	$scope.resetFields = function() {
@@ -103,7 +116,6 @@ MetricConversionController = function($scope) {
 		$scope.celsius = '';
 		$scope.fahrenheit = '';
 		$scope.kelvin = '';
-
 	};
 
 	$scope.setCurrent = function() {
@@ -112,10 +124,11 @@ MetricConversionController = function($scope) {
 		$scope.isMileToKm =  false;
 		$scope.isKmToMile =  false;
 		$scope.isCelsiusToFahrenheit =  false;
+		$scope.isCelsiusToKelvin =  false;
 		$scope.isFahrenheitToCelsius =  false;
 		$scope.isFahrenheitToKelvin =  false;
 		$scope.isKelvinToCelsius =  false;
-		$scope.isCelsiusToKelvin =  false;
+		$scope.isKelvinToFahrenheit =  false;
 
 		return true;
 	};
